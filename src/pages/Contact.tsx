@@ -1,57 +1,12 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import * as z from 'zod'
 import { toast } from '@/hooks/use-toast'
 import { Mail, Phone, MapPin } from 'lucide-react'
-
-const contactSchema = z.object({
-  name: z.string().min(2, 'O nome é obrigatório.'),
-  email: z.string().email('Por favor, insira um e-mail válido.'),
-  message: z.string().min(10, 'A mensagem deve ter pelo menos 10 caracteres.'),
-})
-
-type ContactFormValues = z.infer<typeof contactSchema>
 
 const ContactPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const form = useForm<ContactFormValues>({
-    resolver: zodResolver(contactSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      message: '',
-    },
-  })
-
-  const onSubmit = async (data: ContactFormValues) => {
-    setIsSubmitting(true)
-    try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500))
-
-      // Simulate a random failure (20% chance)
-      if (Math.random() < 0.2) {
-        throw new Error('Simulated server error')
-      }
-
-      console.log('Form data submitted:', data)
-      toast({
-        title: 'Mensagem enviada com sucesso!',
-        description: 'Entraremos em contato em breve.',
-      })
-      form.reset()
-    } catch (error) {
-      toast({
-        title: 'Ocorreu um erro ao enviar a mensagem.',
-        description: 'Por favor, tente novamente.',
-        variant: 'destructive',
-      })
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
 
   return (
     <div className="container mx-auto px-4 py-16">
@@ -59,15 +14,9 @@ const ContactPage = () => {
         <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
           Entre em Contato
         </h1>
-        <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-          Tem alguma dúvida ou quer saber mais sobre nossos cursos? Preencha o
-          formulário abaixo ou utilize um de nossos canais de atendimento.
-        </p>
       </div>
 
       <div className="flex  items-center justify-center">
-
-
         <div className="space-y-8">
           <h2 className="text-2xl font-bold">Nossos Contatos</h2>
           <div className="flex items-start gap-4">
