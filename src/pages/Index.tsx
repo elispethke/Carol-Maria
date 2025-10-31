@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { useLocation, Link } from 'react-router-dom'
-import { Button } from '@/components/ui/button'
 import { TestimonialCard } from '@/components/TestimonialCard'
 import { testimonials } from '@/data/testimonials'
 import {
@@ -34,22 +33,34 @@ const Index = () => {
   return (
     <div className="flex flex-col">
       <section className="relative min-h-[100vh] flex items-center justify-center text-center overflow-hidden bg-background">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-background z-0"></div>
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_left,_hsl(var(--primary)/0.1),_transparent_30%)]"></div>
-        <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_bottom_right,_hsl(var(--primary)/0.1),_transparent_30%)]"></div>
+        <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_bottom_right,_hsl(var(--primary)/0.2),_transparent_30%)]"></div>
 
-        <div className=" absolute inset-0">
+        <div className=" absolute inset-0  pointer-events-none">
+          <img
+            src="/background.png"
+            alt="Background"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className=" absolute inset-0  flex items-center justify-center pointer-events-none">
           <img
             src="/carol.png"
             alt="Background"
-            className="w-90 h-90 object-cover"
+            className="h-full
+      w-auto
+      object-contain
+      max-h-[100vh] "
           />
         </div>
+
+
         <div className="relative z-10 container mx-auto px-4 py-20">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground animate-fade-in-down">
             Fale Inglês com Confiança e Fluência
           </h1>
-          <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up animation-delay-300">
+          <p className="mt-4 text-lg md:text-xl text-white max-w-3xl mx-auto animate-fade-in-up animation-delay-300">
             Aulas dinâmicas e personalizadas com a professora Carol Maria para
             você alcançar seus objetivos.
           </p>
@@ -103,11 +114,12 @@ const Index = () => {
           </div>
           <div className="space-y-12">
             {banners.map((banner, index) => (
-              <CourseBanner
-                key={banner.id}
-                banner={banner}
-                reverse={index % 2 !== 0}
-              />
+              <div key={banner.id}>
+                <CourseBanner
+                  banner={banner}
+                  reverse={index % 2 !== 0}
+                />
+              </div>
             ))}
           </div>
         </div>

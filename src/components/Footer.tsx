@@ -56,6 +56,7 @@ export const Footer = () => {
         {/* Copyright */}
         <div className="text-center text-muted-foreground text-sm mt-2">
           © {new Date().getFullYear()} Inglês com Carol Maria. Todos os direitos reservados.
+          <p className="text-center text-muted-foreground text-sm mt-2">Desenvolvido por Elis Pethke</p>
         </div>
       </div>
     </footer>
