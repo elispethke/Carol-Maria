@@ -49,9 +49,9 @@ const Index = () => {
             src="/carol.png"
             alt="Background"
             className="h-full
-      w-auto
-      object-contain
-      max-h-[100vh] "
+            w-auto
+            object-contain
+             max-h-[100vh]"
           />
         </div>
 
