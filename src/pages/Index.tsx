@@ -48,10 +48,7 @@ const Index = () => {
           <img
             src="/carol.png"
             alt="Background"
-            className="h-full
-            w-auto
-            object-contain
-             max-h-[100vh]"
+            className="w-full h-full object-cover md:object-contain"
           />
         </div>
 
