@@ -61,7 +61,7 @@ const ContactPage = () => {
                 Aulas 100% online, aprenda de qualquer lugar do mundo.
               </p>
               <span className="text-primary font-medium">
-                Liboa,Portugal
+                Lisboa,Portugal
               </span>
             </div>
           </div>
