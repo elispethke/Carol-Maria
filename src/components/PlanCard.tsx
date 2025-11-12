@@ -23,7 +23,7 @@ export const PlanCard = ({ plan }: PlanCardProps) => {
         <img
           src={plan.imageUrl}
           alt={plan.title}
-          className="rounded-lg aspect-[4/5] object-cover mb-4"
+          className="rounded-lg aspect-[4/5] object-contain mb-4"
         />
         <CardTitle className="text-2xl text-primary">{plan.title}</CardTitle>
         <CardDescription>{plan.description}</CardDescription>
