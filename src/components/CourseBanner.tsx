@@ -39,7 +39,7 @@ export const CourseBanner = ({
           <img
             src={banner.imageUrl}
             alt={banner.title}
-            className="w-full h-64 rounded-lg object-cover shadow-subtle transition-transform duration-500 hover:scale-105"
+            className="w-full h-auto rounded-lg object-cover shadow-subtle transition-transform duration-500 hover:scale-105"
           />
         </div>
         <div className="lg:w-1/2">

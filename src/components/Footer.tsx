@@ -14,7 +14,7 @@ export const Footer = () => {
             <img
               src="/logo.png"
               alt="Inglês com Carol Maria Logo"
-              className="h-26 md:h-40"
+              className="h-32 sm:h-40"
             />
           </Link>
         </div>

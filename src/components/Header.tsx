@@ -29,12 +29,15 @@ export const Header = () => {
   return (
     <>
       <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-lg border-b border-border/50">
-        <div className=" mx-auto flex h-30 items-center justify-between px-4">
-          <Link to="/" className="flex items-center gap-2 text-xl font-bold">
+        <div className="relative mx-auto flex h-30 items-center justify-between px-4 py-10 md:justify-between">
+          <Link
+            to="/"
+            className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0"
+          >
             <img
               src="/logo.png"
               alt="Inglês com Carol Maria Logo"
-              className=" h-40"
+              className="h-32 sm:h-40"
             />
           </Link>
 
@@ -99,6 +102,7 @@ export const Header = () => {
           </div>
         )}
       </header>
+
     </>
   )
 }

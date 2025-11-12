@@ -76,7 +76,7 @@ const Index = () => {
       >
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-foreground mb-8">
-            Assista uma aula Experimental!
+            Assista uma aula Grátis!
           </h2>
           <div className="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-2xl max-w-4xl mx-auto bg-gray-200">
             {import.meta.env.VITEST ? (
