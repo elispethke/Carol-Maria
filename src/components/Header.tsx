@@ -41,7 +41,7 @@ export const Header = () => {
             />
           </Link>
 
-          <nav className="hidden items-center space-x-6 lg:flex">
+          <nav className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center space-x-6 ">
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
